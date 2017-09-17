@@ -1,0 +1,95 @@
+.site-header
+	background-color: #fafafa
+
+.custom-header
+	display: table
+	position: relative
+	height: 300px
+	height: 75vh
+	width: 100%
+	&-media
+		bottom: 0
+		left: 0
+		overflow: hidden
+		position: absolute
+		right: 0
+		top: 0
+		&:before
+			background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%)
+			background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%)
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%)
+			bottom: 0
+			content: ""
+			height: 100%
+			left: 0
+			position: absolute
+			right: 0
+			z-index: 2
+		img
+			position: fixed
+			min-height: 100%
+			min-width: 100%
+			// vw prevents 1px gap on left that 100% has
+			min-width: 100vw
+			// 水平垂直居中
+			left: 50%
+			top: 50%
+			-ms-transform: translateX(-50%) translateY(-50%)
+			-moz-transform: translateX(-50%) translateY(-50%)
+			-webkit-transform: translateX(-50%) translateY(-50%)
+			transform: translateX(-50%) translateY(-50%)
+
+/* Site branding */
+
+.site-branding
+	padding: 1em 0
+	position: relative
+	-webkit-transition: margin-bottom 0.2s
+	transition: margin-bottom 0.2s
+	z-index: 3
+	display: table-cell
+	height: 100%
+	vertical-align: bottom
+	a
+		text-decoration: none
+		-webkit-transition: opacity 0.2s
+		transition: opacity 0.2s
+		&hover, &focus
+			opacity: 0.7
+
+.site-title
+	clear: none
+	font-size: 24px
+	font-size: 1.5rem
+	font-weight: 800
+	line-height: 1.25
+	letter-spacing: 0.08em
+	margin: 0
+	padding: 0
+	text-transform: uppercase
+	a
+		color: #fff
+		opacity: 1 /* Prevent opacity from changing during selective refreshes in the customize preview */
+
+.site-description
+	color: #fff
+	opacity: 0.8
+	font-size: 13px
+	font-size: 0.8125rem
+	margin-bottom: 0
+
+.menu-scroll-down
+	display: none
+// .menu-scroll-down
+// 	display: block
+// 	padding: 1em
+// 	position: absolute
+// 	color: #fff
+// 	top: 2em
+// 	right: 0
+// 	.icon
+// 		-webkit-transform: rotate(90deg)
+// 		-ms-transform: rotate(90deg)
+// 		transform: rotate(90deg)
+// 		height: 18px
+// 		width: 18px

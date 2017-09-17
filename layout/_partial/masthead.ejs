@@ -1,0 +1,20 @@
+<header id="masthead" class="site-header" role="banner">
+	<div class="custom-header">
+		<div class="custom-header-media">
+			<img src="<%- url_for(theme.header_bg) %>" />
+		</div>
+		<div class="site-branding">
+			<div class="wrap">
+				<div class="site-branding-text">
+					<h1 class="site-title"><a href="<%- url_for() %>" rel="home"><%- config.title %></a></h1>
+					<p class="site-description"><%- config.subtitle %></p>
+				</div>
+				<a href="#content" class="menu-scroll-down">
+					<svg class="icon icon-arrow-right" aria-hidden="true" role="img">
+						<use href="#icon-arrow-right" xlink:href="#icon-arrow-right"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
