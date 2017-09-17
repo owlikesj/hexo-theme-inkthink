@@ -4,9 +4,7 @@ menu:
 	Archives: /archives
 	Tags: /tags
 	Categories: /categories
-	Github:
-		url: https://github.com/owlikesj/hexoblog
-		icon: github
+	Github: https://github.com/owlikesj/hexoblog
 
 # Masthead image
 header_bg: img/header.jpg

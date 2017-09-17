@@ -1,1 +1,23 @@
 <%- partial('_partial/svg-icons') %>
+<!-- Include jQuery -->
+<script src="//cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+<!-- Include the Sidr JS -->
+<script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$navBtn = $('.navigation-button')
+		$navBtn.sidr({
+			name: 'sidr-main',
+			side: 'right',
+			source: '#site-navigation',
+			renaming: false,
+			displace: false,
+			onOpen: function() {
+				$navBtn.addClass('is-active')
+			},
+			onClose: function() {
+				$navBtn.removeClass('is-active')
+			}
+		})
+	})
+</script>
