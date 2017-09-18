@@ -1,0 +1,10 @@
+<% if (categories && categories.length) { %>
+	<span class="categories-links">
+		<svg class="icon icon-folder"><use xlink:href="#icon-folder"></use></svg>
+		<%- list_categories(categories, {
+			show_count: false,
+			style: 'none',
+			separator: ', '
+		}) %>
+	</span>
+<% } %>

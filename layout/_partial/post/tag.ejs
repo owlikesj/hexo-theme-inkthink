@@ -1,0 +1,10 @@
+<% if (tags && tags.length) { %>
+	<span class="tags-links">
+		<svg class="icon icon-tag"><use xlink:href="#icon-tag"></use></svg>
+		<%- list_tags(tags, {
+			show_count: false,
+			style: 'none',
+			separator: ', '
+		}) %>
+	</span>
+<% } %>
