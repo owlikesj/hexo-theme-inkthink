@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 <%- partial('_partial/head') %>
 <body>
-	<div id="page" class="site">
+	<div id="page" class="site<%- page.path === 'index.html' ? ' home' : '' %>">
 		<%- partial('_partial/masthead') %>
-		<%- body %>
+		<main class="site-main site-content">
+			<%- body %>
+		</main>
 		<%- partial('_partial/footer') %>
 	</div>
 	<%- partial('_partial/after-footer') %>

@@ -1,0 +1,21 @@
+<article class="hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">
+			<a href="<%- url_for(item.path) %>" rel="bookmark"><%- item.title || theme.default_post_title || "Untitled" %></a>
+		</h1>
+		<div class="entry-meta">
+			<span class="date">
+				<svg class="icon icon-time"><use xlink:href="#icon-time"></use></svg>
+				<a href="" rel="bookmark">
+					<%= item.date.format(config.date_format) %>
+				</a>
+			</span>
+			<%- partial('post/category', {categories: item.categories}) %>
+			<%- partial('post/tag', {tags: item.tags}) %>
+		</div>
+	</header>
+	<div class="entry-content">
+		<%- item.content %>
+	</div>
+	<footer class="entry-footer"></footer>
+</article>

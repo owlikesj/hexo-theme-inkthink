@@ -4,8 +4,6 @@
 .custom-header
 	display: table
 	position: relative
-	height: 300px
-	height: 75vh
 	width: 100%
 	&-media
 		bottom: 0
@@ -26,15 +24,45 @@
 			right: 0
 			z-index: 2
 		img
-			position: fixed
-			height: 100%
+			position: absolute
+			min-height: 100%
 			// 水平垂直居中
 			left: 50%
+			top: auto
+			bottom: 0
+			-ms-transform: translateX(-50%) translateY(0)
+			-moz-transform: translateX(-50%) translateY(0)
+			-webkit-transform: translateX(-50%) translateY(0)
+			transform: translateX(-50%) translateY(0)
+
+.home
+	.custom-header
+		height: 300px
+		height: 75vh
+		width: 100%
+		img
+			position: fixed
+			// 水平垂直居中
 			top: 50%
 			-ms-transform: translateX(-50%) translateY(-50%)
 			-moz-transform: translateX(-50%) translateY(-50%)
 			-webkit-transform: translateX(-50%) translateY(-50%)
 			transform: translateX(-50%) translateY(-50%)
+
+/* For browsers that support 'object-fit' */
+@supports ( object-fit: cover )
+	#masthead
+		img
+			height: 100%
+			left: 0
+			-o-object-fit: cover
+			object-fit: cover
+			top: 0
+			-ms-transform: none
+			-moz-transform: none
+			-webkit-transform: none
+			transform: none
+			width: 100%
 
 /* Site branding */
 
@@ -56,8 +84,8 @@
 
 .site-title
 	clear: none
-	font-size: 24px
-	font-size: 1.5rem
+	font-size: 28px
+	font-size: 1.75rem
 	font-weight: 800
 	line-height: 1.25
 	letter-spacing: 0.08em
