@@ -28,6 +28,10 @@ a
 		clear: both
 		content: ""
 		display: block
+	@media screen and (min-width: 48em)
+		max-width: 1000px
+		padding-left: 3em
+		padding-right: 3em
 
 /* SVG Icons base styles */
 
@@ -39,3 +43,9 @@ a
 	top: -0.0625em
 	vertical-align: middle
 	width: 1em
+
+.site-main
+	.wrap
+		@media screen and (max-width: 48em)
+			padding-left: 0
+			padding-right: 0

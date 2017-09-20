@@ -5,7 +5,9 @@
 	<div id="page" class="site<%- is_home() ? ' home' : '' %>">
 		<%- partial('_partial/masthead') %>
 		<main class="site-main site-content">
-			<%- body %>
+			<div class="wrap">
+				<%- body %>
+			</div>
 		</main>
 		<%- partial('_partial/footer') %>
 	</div>
