@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <%- partial('_partial/head') %>
 <body>
-	<div id="page" class="site<%- page.path === 'index.html' ? ' home' : '' %>">
+	<div id="page" class="site<%- is_home() ? ' home' : '' %>">
 		<%- partial('_partial/masthead') %>
 		<main class="site-main site-content">
 			<%- body %>
