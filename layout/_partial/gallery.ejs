@@ -1,0 +1,9 @@
+<div class="gallery">
+	<% photos.forEach(function(photo){ %>
+		<div class="gallery-item">
+			<a href="#" data-featherlight="<%- photo %>">
+				<img src="<%- photo %>" class="gallery-photo">
+			</a>
+		</div>
+	<% }) %>
+</div>

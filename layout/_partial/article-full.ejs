@@ -15,6 +15,10 @@
 		</div>
 	</header>
 	<div class="entry-content">
+		<!-- Gallery -->
+		<% if (item.photos && item.photos.length){ %>
+			<%- partial('gallery', {photos: item.photos}) %>
+		<% } %>
 		<%- item.content %>
 	</div>
 	<footer class="entry-footer"></footer>
