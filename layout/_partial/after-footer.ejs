@@ -20,6 +20,15 @@
 			}
 		})
 
+		var offsetTop = $('#primary')[0].offsetTop
+		$('.menu-scroll-down').click( function( e ) {
+			e.preventDefault()
+			$('html, body').animate({
+				scrollTop : offsetTop
+			}, 600)
+			return false
+		})
+
 		//Back to top
 		$('.scrolltop').click(function() {
 			$('html, body').animate({
