@@ -1,0 +1,22 @@
+<%
+	var options = {
+		style: 'none'
+	}
+	var list = []
+	var isTagIndex = page.type === 'tags'
+	var isCategoryIndex = page.type === 'categories'
+	if (isTagIndex) {
+		list = list_tags(options)
+	} else if (isCategoryIndex) {
+		list = list_categories(options)
+	}
+%>
+<article class="hentry">
+	<div class="entry-content" style="text-align: center;">
+		<%- list %>
+	</div>
+</article>
+<%- partial('_partial/article-archive', {
+	posts: site.posts,
+	groupBy: page.type
+}) %>

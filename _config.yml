@@ -2,8 +2,8 @@
 menu:
 	Home: /
 	Archives: /archives
+  Categories: /categories
 	Tags: /tags
-	Categories: /categories
 	Github: https://github.com/owlikesj/hexoblog
 
 # Masthead image

@@ -1,3 +1,29 @@
+<%
+	var title = config.title
+	var subtitle = config.subtitle
+	if (page.category) {
+		title = page.category
+		subtitle = ''
+	}
+	if (page.tag) {
+		title = "#" + page.tag
+		subtitle = ''
+	}
+	if (page.archive) {
+		if (page.year) title = page.year + (page.month ? '/' + page.month : '')
+		else title = __('archives')
+		subtitle = ''
+	}
+	var isTagIndex = page.type === 'tags' || page.type === 'tag'
+	var isCategoryIndex = page.type === 'categories' || page.type === 'category'
+	if (isTagIndex) {
+		title = __('tags')
+		subtitle = ''
+	} else if (isCategoryIndex) {
+		title = __('categories')
+		subtitle = ''
+	}
+%>
 <header id="masthead" class="site-header" role="banner">
 	<div class="custom-header">
 		<div class="custom-header-media">
@@ -6,8 +32,10 @@
 		<div class="site-branding">
 			<div class="wrap">
 				<div class="site-branding-text">
-					<h1 class="site-title"><a href="<%- url_for() %>" rel="home"><%- config.title %></a></h1>
-					<p class="site-description"><%- config.subtitle %></p>
+					<h1 class="site-title"><a href="<%- url_for() %>" rel="home"><%- title %></a></h1>
+					<% if (subtitle) { %>
+						<p class="site-description"><%- subtitle %></p>
+					<% } %>
 				</div>
 				<a href="#content" class="menu-scroll-down">
 					<svg class="icon icon-arrow-right" aria-hidden="true" role="img">

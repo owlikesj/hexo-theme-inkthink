@@ -1,35 +1,29 @@
 <%
-	var groups = {}
-	page.posts.each(function(post) {
-		var year = post.date.format('YYYY')
-		if (!groups[year]) { groups[year] = [] }
-		groups[year].push(post)
-	})
-	groups = _.chain(groups)
-		.toPairs()
-		.reverse()
-		.value()
+	var options = {
+		style: 'none'
+	}
+	var list = []
+	if (is_archive()) {
+		list = list_archives({
+			style: 'none',
+			transform: function(a) {
+				return date(a, 'YYYY年MM月')
+			}
+		})
+	}
+	if (is_category()) {
+		list = list_categories(options)
+	}
+	if (is_tag()) {
+		list = list_tags(options)
+	}
 %>
-
-<% groups.forEach(function(group) {
-	var year = group[0]
-	var posts = group[1]
-%>
-	<article class="hentry">
-		<header class="entry-header">
-			<h1 class="entry-title"><%- year %>年</h1>
-		</header>
-		<div class="entry-content">
-			<ul class="post-list">
-				<% posts.forEach(function(item) { %>
-					<li class="post-list-item">
-						<a href="<%- url_for(item.path) %>" class="post-list-link">
-							<%- item.title || theme.default_post_title || "Untitled" %>
-							<span class="entry-meta">(<%= item.date.format(config.date_format) %>)</span>
-						</a>
-					</li>
-				<% }) %>
-			</ul>
-		</div>
-	</article>
-<% }) %>
+<article class="hentry">
+	<div class="entry-content" style="text-align: center;">
+		<%- list %>
+	</div>
+</article>
+<%- partial('_partial/article-archive', {
+	posts: page.posts,
+	groupBy: 'year'
+}) %>

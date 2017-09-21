@@ -1,0 +1,55 @@
+<%
+	var groups = {}
+	function distribute(item, index) {
+		if (!groups[index]) { groups[index] = [] }
+		groups[index].push(item)
+	}
+	switch (groupBy) {
+		case 'year':
+			posts.forEach(function(post) {
+				var year = post.date.format('YYYY年')
+				distribute(post, year)  
+			})
+			break
+		case 'tags':
+			posts.forEach(function(post) {
+				var tags = post.tags
+				tags.forEach(function(tag) {
+					distribute(post, tag.name)
+				})
+			})
+			break
+		case 'categories':
+			posts.forEach(function(post) {
+				var categories = post.categories
+				categories.forEach(function(category) {
+					distribute(post, category.name)
+				})
+			})
+			break
+	}
+	groups = _.chain(groups)
+		.toPairs()
+		.reverse()
+		.value()
+%>
+<article class="hentry">
+	<div class="entry-content">
+		<% groups.forEach(function(group) {
+			var index = group[0]
+			var posts = group[1]
+		%>
+			<h2 class="entry-title"><%- index %></h2>
+			<ul class="post-list">
+				<% posts.forEach(function(item) { %>
+					<li class="post-list-item">
+						<a href="<%- url_for(item.path) %>" class="post-list-link">
+							<%- item.title || theme.default_post_title || "Untitled" %>
+							<span class="entry-meta">(<%= item.date.format(config.date_format) %>)</span>
+						</a>
+					</li>
+				<% }) %>
+			</ul>
+		<% }) %>
+	</div>
+</article>
