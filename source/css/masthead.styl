@@ -36,8 +36,6 @@
 			-moz-transform: translateX(-50%) translateY(0)
 			-webkit-transform: translateX(-50%) translateY(0)
 			transform: translateX(-50%) translateY(0)
-	@media screen and (min-width: 48em)
-		display block
 
 .home
 	.custom-header
@@ -90,14 +88,6 @@
 			opacity: 0.7
 	@media screen and (min-width: 30em)
 		padding: 3em 0
-	@media screen and (min-width: 48em)
-		bottom: 0
-		display: block
-		left: 0
-		height: auto
-		padding-top: 0
-		position: absolute
-		width: 100%
 
 .site-title
 	clear: none
@@ -128,18 +118,33 @@
 
 .menu-scroll-down
 	display: none
-	@media screen and (min-width: 48em)
-		display: block
-		padding: 1em
-		position: absolute
-		color: #fff
-		top: 2em
-		right: 0
-		&:focus
-			outline: thin dotted
-		.icon
-			-webkit-transform: rotate(90deg)
-			-ms-transform: rotate(90deg)
-			transform: rotate(90deg)
-			height: 18px
-			width: 18px
+
+.home
+	.site-branding
+		@media screen and (min-width: 48em)
+			bottom: 0
+			display: block
+			left: 0
+			height: auto
+			padding-top: 0
+			position: absolute
+			width: 100%
+	.custom-header
+		@media screen and (min-width: 48em)
+			display block
+	.menu-scroll-down
+		@media screen and (min-width: 48em)
+			display: block
+			padding: 1em
+			position: absolute
+			color: #fff
+			top: 2em
+			right: 0
+			&:focus
+				outline: thin dotted
+			.icon
+				-webkit-transform: rotate(90deg)
+				-ms-transform: rotate(90deg)
+				transform: rotate(90deg)
+				height: 18px
+				width: 18px
