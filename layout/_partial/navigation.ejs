@@ -11,4 +11,9 @@
 			</li>
 		<% } %>
 	</ul>
+	<div class="widget-area">
+		<% theme.widgets.forEach(function(widget){ %>
+			<%- partial('_widget/' + widget) %>
+		<% }) %>
+	</div>
 </nav>
